@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import profileImg from "../assets/profil.jpg";
 ---
 <div
@@ -45,10 +46,10 @@ import profileImg from "../assets/profil.jpg";
               class="absolute inset-0 bg-primary/20 mix-blend-overlay z-20 group-hover:bg-transparent transition-colors duration-500"
             >
             </div>
-            <img
+            <Image
               alt="Profile Picture"
               class="w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105"
-              src={profileImg.src}
+              src={profileImg}
             />
             <div
               class="absolute bottom-6 left-6 right-6 p-4 bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl z-30 translate-y-2 opacity-90 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500"
