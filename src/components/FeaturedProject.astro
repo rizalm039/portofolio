@@ -1,3 +1,10 @@
+---
+import { Image } from "astro:assets";
+import project1 from "../assets/project1.png";
+import project2 from "../assets/project2.png";
+import project3 from "../assets/project3.png";
+---
+
 <div class="py-32 px-4 md:px-10 bg-background-dark relative" id="work">
   <div
     class="absolute top-20 left-0 w-full overflow-hidden pointer-events-none opacity-5"
@@ -26,13 +33,11 @@
           <div
             class="relative rounded-3xl overflow-hidden aspect-video border border-white/10 group-hover:shadow-[0_0_30px_rgba(29,201,57,0.15)] transition-all duration-500"
           >
-            <div
-              class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-700 group-hover:scale-105"
-              style="
-                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCxW91MC7UfsIBw5AbCN9Vf2KF4N3uwD1bFLvkjp5aBz47duCHV3N7zSDd7ebAxzbqqIg6v7YF-KWwwJmaWn9xy8brq420vXMyYz02ovNwrB7qpsAncyB5dEk_rz4DxwOvODeQ0AYvoucaNRLDA2Nmn_DsxS-cKFvd_dpiPVA6xzr8D-Xv13l9s8u41mTrngC-eD-J9CL4uPqDY_pe47p5oNk3F50km39iVqODFyoiTfy7ogLnWuPBY5DG072_sAA_TCOaWSSzR0j0');
-                      "
-            >
-            </div>
+            <Image
+              src={project1}
+              alt="Financial Analytics Project"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
             <div
               class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"
             >
@@ -83,13 +88,11 @@
           <div
             class="relative rounded-3xl overflow-hidden aspect-video border border-white/10 group-hover:shadow-[0_0_30px_rgba(29,201,57,0.15)] transition-all duration-500"
           >
-            <div
-              class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-700 group-hover:scale-105"
-              style="
-                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBLcoj95q27kmhEOx_NdpGsCL8mVhcyn5sJpGiI3nuIjJz_hWIQzo13SJTtj8knwZg1F5g0rg1s1ZtvArPPZ6Ll5a45zje0ge46Ky4g1ExeP-3CL6to_7BAiuszDAzU2v8_NtjkaOwpSdJo1FGxtqJ4aLm1aics0A72QLb-dRsfXNodmB2PlAkusDi2GHAtGLyh8LLu32w0Tcm8JTslLKCP4uR4LNkZpu4xrLC2rLYrlLm-dfD9JzCQKNAWGSPobZ8ZX7lo682UPOU');
-                      "
-            >
-            </div>
+            <Image
+              src={project2}
+              alt="EcoTravel App Project"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
             <div
               class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"
             >
@@ -140,13 +143,11 @@
           <div
             class="relative rounded-3xl overflow-hidden aspect-video border border-white/10 group-hover:shadow-[0_0_30px_rgba(29,201,57,0.15)] transition-all duration-500"
           >
-            <div
-              class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-700 group-hover:scale-105"
-              style="
-                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBtsmHZ7NkpUD0oSLQE-fZIGh0MF0FmlJSQ9af3q16BF3A_catnouSfqBo48wXRt1v_bdZWGAry8OUJJ4NOmrIGJIgEUnqCz-V1dUGyLr6peoAI8o4tMekl0pk7_fkLdxkZmE0_DpdSrPhh6o0PnQq_PLNHkmyeq3kRjNpu1A_GLNebUIN6WV4ag0iLDLFRa6rxvT-OW4DEBaqNPbP2ZKOzwDk97HhBc28JXIT6smvsPI9cnz9ERbKTaQbUn_ePCIVJNUE-FtNC_RA');
-                      "
-            >
-            </div>
+            <Image
+              src={project3}
+              alt="SaaS Platform Web Project"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
             <div
               class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"
             >
