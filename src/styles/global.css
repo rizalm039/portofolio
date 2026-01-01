@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 @theme {
   /* Colors */
   --color-primary: #1dc939;
@@ -8,10 +9,10 @@
   --color-background-dark: #0e1610;
   --color-surface-dark: #162319;
   --color-surface-card: #1c2b1f;
-
+ 
   /* Fonts */
-  --font-display: "Manrope", sans-serif;
-
+  --font-display: "Manrope Variable", sans-serif;
+  /* --font-sans: "Manrope", "Inter", sans-serif; */
   /* Border Radius */
   --radius-blob: 40% 60% 70% 30% / 40% 50% 60% 50%;
 

@@ -1,5 +1,7 @@
 ---
-import '../styles/global.css'; // <--- Import file CSS baru di sini
+import "../styles/global.css"; // <--- Import file CSS baru di sini
+import "@fontsource-variable/manrope"; // Defaults to wght axis
+import "@fontsource-variable/manrope/wght.css"; // Specify axis 
 
 interface Props {
 	title: string;
@@ -8,28 +10,47 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html class="dark" lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 		<title>{title}</title>
-		
-		<link href="https://fonts.googleapis.com" rel="preconnect" />
-		<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-		<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet" />
-		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
-        
-        </head>
-	<body class="bg-background-light dark:bg-background-dark text-[#111712] dark:text-white font-display overflow-x-hidden antialiased selection:bg-primary selection:text-background-dark">
-		<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root">
-			<div class="fixed top-[-20%] right-[-10%] w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] pointer-events-none z-0"></div>
-			<div class="fixed bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] pointer-events-none z-0"></div>
-			
+
+		<!-- <link href="https://fonts.googleapis.com" rel="preconnect" />
+		<link
+			crossorigin=""
+			href="https://fonts.gstatic.com"
+			rel="preconnect"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+			rel="stylesheet"
+		/> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body
+		class="bg-background-light dark:bg-background-dark text-[#111712] dark:text-white font-display overflow-x-hidden antialiased selection:bg-primary selection:text-background-dark"
+	>
+		<div
+			class="relative flex h-auto min-h-screen w-full flex-col group/design-root"
+		>
+			<div
+				class="fixed top-[-20%] right-[-10%] w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] pointer-events-none z-0"
+			>
+			</div>
+			<div
+				class="fixed bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] pointer-events-none z-0"
+			>
+			</div>
+
 			<slot />
 		</div>
-    <script>
-      import "../scripts/global.js";
-    </script>
+		<script>
+			import "../scripts/global.js";
+		</script>
 	</body>
 </html>
