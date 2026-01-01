@@ -11,8 +11,10 @@
   "dependencies": {
     "@fontsource-variable/manrope": "^5.2.8",
     "@fontsource/material-symbols-outlined": "^5.2.30",
+    "@iconify-json/material-symbols": "^1.2.50",
     "@tailwindcss/vite": "^4.1.17",
     "astro": "^5.16.4",
+    "astro-icon": "^1.1.5",
     "tailwindcss": "^4.1.17"
   }
 }

@@ -1,3 +1,7 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
 <footer
   class="bg-surface-dark/50 border-t border-white/5 pt-16 pb-8 relative z-10"
 >
@@ -8,9 +12,7 @@
           <div
             class="relative flex items-center justify-center w-10 h-10 bg-surface-dark border border-white/10 rounded-xl"
           >
-            <span class="material-symbols-outlined text-xl text-primary"
-              >terminal</span
-            >
+            <Icon name="material-symbols:terminal" class="text-2xl text-primary"/>  
           </div>
           <h2 class="text-white text-xl font-bold">
             Rizal<span class="text-primary">.Project</span>
@@ -107,21 +109,16 @@
         <h3 class="text-white font-bold mb-6">Contact</h3>
         <ul class="space-y-4">
           <li class="flex items-start gap-3 text-sm text-gray-400">
-            <span class="material-symbols-outlined text-primary text-lg mt-0.5"
-              >mail</span
-            >
+            <Icon name="material-symbols:mail-outline" class="text-2xl text-primary mt-0,5"/>
             <span>masmokhamadrizal@gmail.com</span>
           </li>
           <li class="flex items-start gap-3 text-sm text-gray-400">
-            <span class="material-symbols-outlined text-primary text-lg mt-0.5"
-              >phone</span
-            >
+            
+            <Icon name="material-symbols:call-outline" class="text-2xl text-primary mt-0,5"/>
             <span>+62 856-5083-2148</span>
           </li>
           <li class="flex items-start gap-3 text-sm text-gray-400">
-            <span class="material-symbols-outlined text-primary text-lg mt-0.5"
-              >location_on</span
-            >
+            <Icon name="material-symbols:location-on-outline" class="text-2xl text-primary mt-0,5"/>
             <span>Malang, Indonesia<br />Available Remote</span>
           </li>
         </ul>
