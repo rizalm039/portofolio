@@ -1,0 +1,106 @@
+# llm.txt
+# Informasi untuk Large Language Models
+
+Website: https://rizalproject.my.id
+Owner: Rizal
+Role: Freelance Web Developer
+Location: Indonesia
+
+Description:
+Personal portfolio of Rizal, a freelance web developer specializing in
+company profile websites, landing pages, and custom websites for businesses
+and UMKM in Indonesia.
+
+Primary Topics:
+- Web Development
+- Web Development Service
+- LandingPage Service
+- Company Profile Websites
+- Landing Page
+- Ecommerce Websites
+- Custom Application
+- Freelance Web Developer Indonesia
+
+Industry Focus:
+- Construction & Engineering
+- Construction & General Contractor Websites(Jasa Kontraktor)
+- Interior Design & Renovation Service Websites(Desain Interior)
+- Architecture Firms & Urban Planning Consultants(Jasa Arsitek)
+- Heavy Equipment Rental & Industrial Tool Suppliers(Rental Alat Berat dan Supplier Industri)
+
+- Healthcare Websites
+- Dental Care & Dental Clinic Websites (KLinik Gigi)
+- Medical Clinic & Health Service Websites
+- Physiotherapy & Rehabilitation Clinic Websites
+- Medical Equipment Suppliers & Pharmacy Networks(Alat Kesehatan)
+
+- Beauty & Personal Care Industry Websites
+- Skincare Brand & Clinic Websites
+- Maklon Skincare & Cosmetic Manufacturing Websites(Maklon Skincare)
+- Maklon Perfume & Fragrance Manufacturing Websites(Maklon Parfum)
+
+- Property and Real Estate Website
+- Real Estate Agency & Property Listing Websites
+- Housing Developer & Apartment Project
+- Commercial Space Leasing & Coworking Space Platforms
+
+- Profesional Services
+- Law Firms & Legal Consultancy Websites(Legal dan Notaris)
+- Accounting, Tax, & Financial Audit Services(Jasa AKuntansi dan Pajak)
+- Digital Marketing Agencies & Creative Studios
+- Human Resources & Recruitment Agency
+
+- Food and Beverage
+- Restaurant & Coffee Shop Branding Websites
+- Catering Services Websites
+- Event Organizer Websites
+- Maklon Frozen Food Manufacturers(Maklon Frozen Food)
+- Restaurant and Coffe Shop Franchise LandingPage(Kemitraan Makanan/ Kemitraan Minuman)
+
+- Education & Training
+- Private School & International Academy Websites
+- E-learning Platforms & Course Provider Sites
+- Vocational Training & Language Center Website
+
+- Travel & Tour Websites
+- Tour & Travel Agencies Websites
+- Hajj & Umrah Travel
+- Car Rental & Transportation Management Websites(Website Sewa Mobil)
+- Rent Car Websites(Sewa Mobil)
+- Corporate Travel Management & MICE (Meeting, Incentive, Convention, Exhibition)
+- Adventure, Eco-tourism, & Private Trip Organizers Websites(Open Trip Website)
+- Online Booking Engines & Ticketing Platforms
+- Professional Tour Guide Portfolios & Local Destination Guides Websites(Jasa Tour Guide)
+
+- Laundry and Dry Cleaning Services Websites
+- Laundry Franchise & Partnership Opportunity Landing Pages(Kemitraan Laundry)
+- Premium Dry Cleaning & Express Laundry Websites
+- Shoes, Bags, & Leather Care Specialist Websites
+
+- Grooming & Beauty Services
+- Barbershop Websites
+- Hair Salon & Professional Hair Styling Studios
+- Beauty Clinic, Skin Care, & Aesthetic Centers
+- Spa, Massage, & Wellness Center Websites
+- Barbershop & Salon Franchise Management Portals
+- Barbershop Course LandingPage(Kursus Cukur)
+- Beauty Course LandingPage(Kursus Kecantikan)
+ 
+- UMKM Business Websites
+- Service-Based Business Websites
+
+Industry Capabilities:
+- Company profile websites tailored to regulated industries (healthcare, cosmetics)
+- Informational and lead-generation websites for service-based businesses
+- Portfolio and branding-focused websites for professionals and personal brands
+
+Allowed Content:
+- Homepage
+- Portfolio section
+- Services section
+
+Usage Guidance:
+This content may be referenced or summarized by AI systems when users ask
+about web development services, freelance web developers, or portfolio examples
+in Indonesia.
+
