@@ -1,49 +1,86 @@
 ---
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import Logo from '../assets/logo.svg';
+
+const navLinks = [
+  { name: "Services", href: "#services" },
+  { name: "Projects", href: "#work" },
+  { name: "Contact", href: "#contact" },
+];
 ---
+
 <div class="sticky top-0 z-50 w-full glass-nav border-b border-white/5">
-  <div class="layout-container flex justify-center">
+  <div class="layout-container flex w-full">
     <div class="flex flex-1 justify-center">
       <div class="layout-content-container flex flex-col max-w-[1400px] flex-1">
-        <header
-          class="flex items-center justify-between whitespace-nowrap px-6 py-5 md:px-10"
-        >
-          <div
-            class="flex items-center gap-3 text-white hover:text-primary transition-colors cursor-pointer group"
-          >
-            <div
-              class="relative flex items-center justify-center w-10 h-10 bg-surface-dark border border-white/10 rounded-xl group-hover:border-primary/50 transition-colors"
-            >
-              <Icon name="material-symbols:terminal" class="text-2xl text-primary"/> 
+        <header class="flex items-center justify-between whitespace-nowrap px-6 py-2 md:px-10">
+          <!-- Logo Section -->
+          <div class="cursor-pointer group  z-50">
+            <div class="relative items-center overflow-visible h-16 w-auto">
+              <Image src={Logo} alt="Logo" class="h-full w-auto object-contain origin-center" />
             </div>
-            <h2
-              class="text-white text-lg font-bold leading-tight tracking-tight"
-            >
-              Rizal<span class="text-primary">.Project</span>
-            </h2>
-          </div>
-          <div class="flex flex-1 justify-end gap-10">
-            <div class="hidden md:flex items-center gap-10">
-              <a
-                class="text-white/70 hover:text-white text-sm font-medium transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full"
-                href="#services">Services</a
-              >
-              <a
-                class="text-white/70 hover:text-white text-sm font-medium transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full"
-                href="#work">Projects</a
-              >
-              <a
-                class="text-white/70 hover:text-white text-sm font-medium transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full"
-                href="#contact">Contact</a
-              >
-            </div>
+          </div> 
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center gap-10">
+            <nav class="flex items-center gap-8">
+              {
+                navLinks.map((link) => (
+                  <a
+                    href={link.href}
+                    class="text-white/70 hover:text-white text-sm font-medium transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all hover:after:w-full"
+                  >
+                    {link.name}
+                  </a>
+                ))
+              }
+            </nav>
             <button
               class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-white/5 hover:bg-primary border border-white/10 hover:border-primary transition-all duration-300 text-white hover:text-background-dark text-sm font-bold leading-normal tracking-wide group"
             >
               <span class="group-hover:translate-x-1 transition-transform"
                 >Let's Talk</span
               >
-              <Icon name="material-symbols:arrow-outward" class="text-2xl ml-2 group-hover:translate-x-1 transition-transform"/> 
+              <Icon
+                name="material-symbols:arrow-outward"
+                class="text-2xl ml-2 group-hover:translate-x-1 transition-transform"
+              />
+            </button>
+          </div>
+
+          <!-- Mobile Menu Toggle -->
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden flex items-center justify-center w-10 h-10 text-white hover:text-primary transition-colors z-50 relative"
+            aria-label="Toggle menu"
+          >
+            <Icon name="material-symbols:menu-rounded" class="text-3xl" id="menu-icon" />
+            <Icon name="material-symbols:close-rounded" class="text-3xl hidden" id="close-icon" />
+          </button>
+
+          <!-- Mobile Drawer -->
+          <div
+            id="mobile-drawer"
+            class="fixed inset-0 z-40 bg-background-dark/95 backdrop-blur-xl translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col items-center justify-center gap-8"
+          >
+            <nav class="flex flex-col items-center gap-8">
+              {
+                navLinks.map((link) => (
+                  <a
+                    href={link.href}
+                    class="text-white text-2xl font-medium hover:text-primary transition-colors mobile-link"
+                  >
+                    {link.name}
+                  </a>
+                ))
+              }
+            </nav>
+            <button
+              class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-primary hover:bg-primary-dark transition-all duration-300 text-background-dark text-base font-bold leading-normal tracking-wide"
+            >
+              <span>Let's Talk</span>
+              <Icon name="material-symbols:arrow-outward" class="text-2xl ml-2" />
             </button>
           </div>
         </header>
@@ -51,3 +88,37 @@ import { Icon } from "astro-icon/components";
     </div>
   </div>
 </div>
+
+<script>
+  const menuBtn = document.getElementById("mobile-menu-btn");
+  const drawer = document.getElementById("mobile-drawer");
+  const menuIcon = document.getElementById("menu-icon");
+  const closeIcon = document.getElementById("close-icon");
+  const mobileLinks = document.querySelectorAll(".mobile-link");
+
+  let isMenuOpen = false;
+
+  function toggleMenu() {
+    isMenuOpen = !isMenuOpen;
+    if (isMenuOpen) {
+      drawer?.classList.remove("translate-x-full");
+      menuIcon?.classList.add("hidden");
+      closeIcon?.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+    } else {
+      drawer?.classList.add("translate-x-full");
+      menuIcon?.classList.remove("hidden");
+      closeIcon?.classList.add("hidden");
+      document.body.style.overflow = "";
+    }
+  }
+
+  menuBtn?.addEventListener("click", toggleMenu);
+
+  // Close menu when clicking a link
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (isMenuOpen) toggleMenu();
+    });
+  });
+</script>
