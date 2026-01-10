@@ -1,6 +1,7 @@
 ---
-import "../styles/global.css"; // <--- Import file CSS baru di sini
-import "@fontsource-variable/manrope"; // Defaults to wght axis
+import "../styles/global.css"; 
+import "@fontsource-variable/manrope"; 
+import { GeoSchema } from "../data/GeoSchema";
 
 
 interface Props {
@@ -19,6 +20,7 @@ const { title } = Astro.props;
 		<meta name="description" content="Rizal Project offers professional Web Development and Landing Page services. Expert Freelance Web Developer in Indonesia for Company Profiles, E-commerce, and custom apps." />
 		<meta name="keywords" content="Rizal Project, Freelance Web Developer, Web Development Specialist, Web Development Service, LandingPage Service, Company Profile Websites, Landing Page, Ecommerce Websites, Custom Application, Freelance Web Developer Indonesia" />
 		<title>{title}</title>
+		<script type="application/ld+json" set:html={JSON.stringify(GeoSchema)} />
 	</head>
 	<body
 		class="bg-background-light dark:bg-background-dark text-[#111712] dark:text-white font-display overflow-x-hidden antialiased selection:bg-primary selection:text-background-dark"
