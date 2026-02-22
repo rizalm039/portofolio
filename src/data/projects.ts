@@ -16,7 +16,7 @@ export const projects: Project[] = [
   },
   {
     title: "EcoTravel App",
-    category: "Tour & Travel",
+    category: "Travel",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBLcoj95q27kmhEOx_NdpGsCL8mVhcyn5sJpGiI3nuIjJz_hWIQzo13SJTtj8knwZg1F5g0rg1s1ZtvArPPZ6Ll5a45zje0ge46Ky4g1ExeP-3CL6to_7BAiuszDAzU2v8_NtjkaOwpSdJo1FGxtqJ4aLm1aics0A72QLb-dRsfXNodmB2PlAkusDi2GHAtGLyh8LLu32w0Tcm8JTslLKCP4uR4LNkZpu4xrLC2rLYrlLm-dfD9JzCQKNAWGSPobZ8ZX7lo682UPOU",
     gridClass: "col-span-1 lg:col-span-2",
   },

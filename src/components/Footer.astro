@@ -2,6 +2,9 @@
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import Logo from "../assets/logo.svg";
+import { projects } from "../data/projects";
+
+const categories = [...new Set(projects.map((p) => p.category))];
 ---
 
 <footer
@@ -13,9 +16,9 @@ import Logo from "../assets/logo.svg";
         class="layout-content-container flex flex-col max-w-[1400px] flex-1 px-4 md:px-10"
       >
         <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16"
         >
-          <div class="col-span-1 lg:col-span-2">
+          <div class="col-span-1 md:col-span-2 lg:col-span-2">
             <div class="flex items-center gap-3 text-white mb-6">
               <div class="relative flex items-center justify-center w-54 h-16">
                 <Image src={Logo} alt="Logo" class="object-contain" />
@@ -85,7 +88,7 @@ import Logo from "../assets/logo.svg";
               <li>
                 <a
                   class="text-gray-400 hover:text-primary text-sm transition-colors"
-                  href="#">Home</a
+                  href="/">Home</a
                 >
               </li>
               <li>
@@ -97,7 +100,7 @@ import Logo from "../assets/logo.svg";
               <li>
                 <a
                   class="text-gray-400 hover:text-primary text-sm transition-colors"
-                  href="#work">Projects</a
+                  href="/showcase">Projects</a
                 >
               </li>
               <li>
@@ -109,6 +112,19 @@ import Logo from "../assets/logo.svg";
             </ul>
           </div>
           <div class="col-span-1">
+            <h3 class="text-white font-bold mb-6">Projects</h3>
+            <ul class="space-y-4">
+              {categories.map((cat) => (
+                <li>
+                  <a
+                    class="text-gray-400 hover:text-primary text-sm transition-colors"
+                    href={`/showcase?category=${encodeURIComponent(cat)}`}
+                  >{cat}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="col-span-1">
             <h3 class="text-white font-bold mb-6">Contact</h3>
             <ul class="space-y-4">
               <li class="flex items-start gap-3 text-sm text-gray-400">
@@ -116,8 +132,8 @@ import Logo from "../assets/logo.svg";
                   name="material-symbols:mail-outline"
                   class="text-2xl text-primary mt-0,5" 
                 />
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=masmokhamadrizal@gmail.com">
-                  <span>masmokhamadrizal@gmail.com</span>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=inforizalproject@gmail.com">
+                  <span>inforizalproject@gmail.com</span>
                 </a>
               </li>
               <li class="flex items-start gap-3 text-sm text-gray-400">
@@ -143,7 +159,7 @@ import Logo from "../assets/logo.svg";
           class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
         >
           <p class="text-white-400 text-xs">
-            © 2025 Rizal Projects. All rights reserved.
+            © 2026 Rizal Projects. All rights reserved.
           </p>
           <div class="flex gap-6 text-xs text-white-600">
             <a class="hover:text-white-600 transition-colors" href="#"
