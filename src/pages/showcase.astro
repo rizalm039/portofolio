@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Service from '../components/Service.astro';
+import Project from '../components/Project.astro';
+import CTASection from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Jasa Bikin Website">
+  
+  <Navbar />
+  <div class="layout-container flex h-full grow flex-col relative z-10">
+    <Project />
+    <Service />
+    <CTASection />
+  </div>
+  <Footer />
+</Layout>

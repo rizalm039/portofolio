@@ -1,0 +1,238 @@
+---
+import { projects } from "../data/projects";
+
+// Extract unique categories from project data
+const categories = [...new Set(projects.map((p) => p.category))];
+---
+
+<div>
+  <main
+    class="layout-container flex h-full grow flex-col relative z-10 pt-20 pb-32"
+  >
+    <div
+      class="layout-content-container max-w-[1400px] mx-auto px-4 md:px-10 w-full"
+    >
+      <div class="mb-16 md:mb-24 text-center relative">
+        <h1
+          class="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight leading-tight"
+        >
+          Custom Digital Solutions<br class="hidden md:block" />
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-white via-primary to-green-200"
+            >Software Systems, and Web Platforms</span
+          >
+        </h1>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
+          Explore my work in software engineering, system architecture, web development, and digital automation for growing businesses.
+        </p>
+      </div>
+
+      <!-- Category Tabs -->
+      <div class="flex justify-center mb-16 overflow-x-auto pb-4 md:pb-0">
+        <div
+          class="flex items-center gap-2 p-1.5 bg-surface-card border border-white/5 rounded-full"
+          id="category-tabs"
+        >
+          <button
+            class="category-tab active px-6 py-2.5 rounded-full bg-primary text-background-dark font-bold text-sm transition-all shadow-[0_0_15px_rgba(29,201,57,0.3)]"
+            data-category="all"
+          >
+            All Work
+          </button>
+          {categories.map((cat) => (
+            <button
+              class="category-tab px-6 py-2.5 rounded-full text-gray-400 hover:text-white hover:bg-white/5 font-medium text-sm transition-all"
+              data-category={cat}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6" id="projects-grid">
+        {
+          projects.map((project) => (
+            <div
+              class={`group relative flex flex-col bg-surface-card border border-white/5 rounded-3xl overflow-hidden hover:border-primary/30 transition-all duration-500 project-card ${project.gridClass}`}
+              data-category={project.category}
+              style={project.gridClass.includes("h-") ? "" : "min-height: 400px; height: 100%;"}
+            >
+              <div class={`absolute inset-0 w-full overflow-hidden ${project.gridClass.includes('col-span-3') ? 'h-[450px]' : 'h-[400px]'}`} style="position: absolute;">
+                 {project.isIcon ? (
+                  <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110 relative">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 z-0" />
+                    <div class="absolute inset-0 flex items-center justify-center z-10 opacity-30 group-hover:opacity-50 transition-opacity">
+                      <span class="material-symbols-outlined text-9xl text-white">
+                        {project.iconName}
+                      </span>
+                    </div>
+                  </div>
+                ) : (
+                  <div
+                    class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                    style={`background-image: url('${project.image}');`}
+                  />
+                )}
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
+              </div>
+
+              <div class={`relative w-full ${project.gridClass.includes('col-span-3') ? 'h-[450px]' : 'h-[400px]'}`}>
+                  <div class="absolute bottom-0 left-0 p-8 flex flex-col gap-2 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                    <div class="flex items-center gap-3 mb-2">
+                      <span class="text-primary font-mono text-xs uppercase tracking-wider bg-primary/10 px-3 py-1 rounded-full backdrop-blur-sm">
+                        {project.category}
+                      </span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white group-hover:text-primary transition-colors leading-tight">
+                      {project.title}
+                    </h3>
+                  </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="mt-20 flex justify-center" id="load-more-container">
+        <button
+          id="load-more-btn"
+          class="flex items-center gap-3 text-gray-400 hover:text-primary font-bold transition-colors group bg-primary rounded-full px-5 py-3"
+        >
+          <span class="text-white">Load More</span>
+        </button>
+      </div>
+    </div>
+  </main>
+</div>
+
+<style>
+  .project-card {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  .project-card.fade-out {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+    position: absolute;
+    visibility: hidden;
+  }
+  .project-card.fade-in {
+    opacity: 1;
+    transform: scale(1);
+  }
+</style>
+
+<script>
+  // Category tab filtering
+  const tabs = document.querySelectorAll<HTMLButtonElement>(".category-tab");
+  const allCards = document.querySelectorAll<HTMLElement>(".project-card");
+  const loadMoreContainer = document.getElementById("load-more-container");
+  const loadMoreBtn = document.getElementById("load-more-btn");
+
+  const INITIAL_VISIBLE = 5; // Number of projects visible initially for "All Work"
+  const ACTIVE_CLASS = "bg-primary text-background-dark font-bold shadow-[0_0_15px_rgba(29,201,57,0.3)]";
+  const INACTIVE_CLASS = "text-gray-400 hover:text-white hover:bg-white/5 font-medium";
+
+  function setActiveTab(activeTab: HTMLButtonElement) {
+    tabs.forEach((tab) => {
+      // Remove all style classes first
+      ACTIVE_CLASS.split(" ").forEach((c) => tab.classList.remove(c));
+      INACTIVE_CLASS.split(" ").forEach((c) => tab.classList.remove(c));
+
+      if (tab === activeTab) {
+        ACTIVE_CLASS.split(" ").forEach((c) => tab.classList.add(c));
+        tab.classList.add("active");
+      } else {
+        INACTIVE_CLASS.split(" ").forEach((c) => tab.classList.add(c));
+        tab.classList.remove("active");
+      }
+    });
+  }
+
+  function filterProjects(category: string) {
+    let visibleCount = 0;
+
+    allCards.forEach((card) => {
+      const cardCategory = card.getAttribute("data-category");
+      const shouldShow = category === "all" || cardCategory === category;
+
+      if (shouldShow) {
+        card.classList.remove("fade-out", "hidden");
+        card.classList.add("fade-in");
+        card.style.position = "";
+        card.style.visibility = "";
+        visibleCount++;
+      } else {
+        card.classList.add("fade-out");
+        card.classList.remove("fade-in");
+        // After transition, fully hide
+        setTimeout(() => {
+          if (card.classList.contains("fade-out")) {
+            card.classList.add("hidden");
+          }
+        }, 400);
+      }
+    });
+
+    // Show/hide Load More button
+    // Only show for "All Work" when there are more than INITIAL_VISIBLE projects
+    if (loadMoreContainer) {
+      if (category === "all" && visibleCount > INITIAL_VISIBLE) {
+        // Re-apply initial hidden state for "All Work"
+        let count = 0;
+        allCards.forEach((card) => {
+          if (!card.classList.contains("fade-out")) {
+            if (count >= INITIAL_VISIBLE) {
+              card.classList.add("hidden");
+              card.classList.remove("fade-in");
+            }
+            count++;
+          }
+        });
+        loadMoreContainer.style.display = "flex";
+      } else {
+        loadMoreContainer.style.display = "none";
+      }
+    }
+  }
+
+  // Tab click handlers
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const category = tab.getAttribute("data-category") || "all";
+      setActiveTab(tab);
+      filterProjects(category);
+    });
+  });
+
+  // Load More button handler
+  if (loadMoreBtn && loadMoreContainer) {
+    loadMoreBtn.addEventListener("click", () => {
+      const hiddenCards = document.querySelectorAll(".project-card.hidden");
+      hiddenCards.forEach((card) => {
+        card.classList.remove("hidden");
+        card.classList.add("fade-in");
+      });
+      loadMoreContainer.style.display = "none";
+    });
+  }
+
+  // Initialize: show first INITIAL_VISIBLE, hide rest
+  function initProjects() {
+    allCards.forEach((card, index) => {
+      if (index >= INITIAL_VISIBLE) {
+        card.classList.add("hidden");
+      }
+    });
+
+    if (loadMoreContainer) {
+      if (allCards.length <= INITIAL_VISIBLE) {
+        loadMoreContainer.style.display = "none";
+      }
+    }
+  }
+
+  initProjects();
+</script>
