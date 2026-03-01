@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { projects } from "../data/projects";
 
 // Extract unique categories from project data
@@ -69,12 +70,23 @@ const categories = [...new Set(projects.map((p) => p.category))];
                       </span>
                     </div>
                   </div>
-                ) : (
-                  <div
-                    class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                    style={`background-image: url('${typeof project.image === 'string' ? project.image : project.image?.src}');`}
+                ) : typeof project.image === 'string' ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
+                    decoding="async"
                   />
-                )}
+                ) : project.image ? (
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    format="webp"
+                    quality={80}
+                  />
+                ) : null}
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300 z-20" />
               </div>
 
