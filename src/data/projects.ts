@@ -1,8 +1,12 @@
+import type { ImageMetadata } from 'astro';
+import bottopupImg from '../assets/bottopup.png';
+import travelImg from '../assets/travel.png';
+
 export interface Project {
   title: string;
   category: string;
   gridClass: string;
-  image?: string;
+  image?: string | ImageMetadata;
   isIcon?: boolean;
   iconName?: string;
 }
@@ -15,15 +19,15 @@ export const projects: Project[] = [
     gridClass: "col-span-1 lg:col-span-2",
   },
   {
-    title: "EcoTravel App",
-    category: "Travel",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBLcoj95q27kmhEOx_NdpGsCL8mVhcyn5sJpGiI3nuIjJz_hWIQzo13SJTtj8knwZg1F5g0rg1s1ZtvArPPZ6Ll5a45zje0ge46Ky4g1ExeP-3CL6to_7BAiuszDAzU2v8_NtjkaOwpSdJo1FGxtqJ4aLm1aics0A72QLb-dRsfXNodmB2PlAkusDi2GHAtGLyh8LLu32w0Tcm8JTslLKCP4uR4LNkZpu4xrLC2rLYrlLm-dfD9JzCQKNAWGSPobZ8ZX7lo682UPOU",
+    title: "Bot WhatsApp TopUp",
+    category: "Custom",
+    image: bottopupImg,
     gridClass: "col-span-1 lg:col-span-2",
   },
   {
-    title: "SaaS Marketing Platform",
-    category: "Company Profile",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBtsmHZ7NkpUD0oSLQE-fZIGh0MF0FmlJSQ9af3q16BF3A_catnouSfqBo48wXRt1v_bdZWGAry8OUJJ4NOmrIGJIgEUnqCz-V1dUGyLr6peoAI8o4tMekl0pk7_fkLdxkZmE0_DpdSrPhh6o0PnQq_PLNHkmyeq3kRjNpu1A_GLNebUIN6WV4ag0iLDLFRa6rxvT-OW4DEBaqNPbP2ZKOzwDk97HhBc28JXIT6smvsPI9cnz9ERbKTaQbUn_ePCIVJNUE-FtNC_RA",
+    title: "Nomads Travel",
+    category: "Travel",
+    image: travelImg,
     gridClass: "col-span-1 lg:col-span-2",
   },
   {
@@ -38,10 +42,5 @@ export const projects: Project[] = [
     isIcon: true,
     iconName: "smart_toy",
     gridClass: "col-span-1 lg:col-span-3",
-  },{
-    title: "Core Infrastructure Refactor",
-    category: "Company Profile",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDn8w4aFrXghZ_kjtccxsOd5kuRr8CkqcXuqEfSXWtnUzKdz0kTfA0qk_CVO3M2NB1TdSTuG5tnfq9KEAq0n8Gt4HHWW6h1OEffXpx-CbYDgak_Afs0-_Z73-5A5bWlSEwHuhOAH-FdKcBx33_-AyHgGAxIQvfg1ozeu6EmVBa64awiSZOUjGAdzzKmyn4HFdAtsSZSmqpFGL8KoSLZdbXw3-n2fccQIff6kdzW_3mOla3P--QgZEKMvNnXn8XjJn59GGWA01zx9Eg",
-    gridClass: "col-span-1 lg:col-span-2",
   }
 ];
