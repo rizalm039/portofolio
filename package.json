@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.0",
     "@fontsource-variable/manrope": "^5.2.8",
     "@fontsource/material-symbols-outlined": "^5.2.30",
     "@iconify-json/material-symbols": "^1.2.50",
