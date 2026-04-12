@@ -1,6 +1,6 @@
 export const GeoSchema = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": ["ProfessionalService", "ITService", "WebDevelopmentService"],
   "name": "Rizal Project",
   "url": "https://rizalproject.my.id",
   "description": "Personal portfolio of Rizal, a freelance web developer specializing in company profile websites, landing pages, and custom websites for businesses and UMKM in Indonesia.",

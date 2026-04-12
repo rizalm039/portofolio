@@ -1,6 +1,7 @@
 import type { ImageMetadata } from 'astro';
 import bottopupImg from '../assets/bottopup.png';
 import travelImg from '../assets/travel.png';
+import beautyCourseImg from '../assets/beauty.webp';
 
 export interface Project {
   title: string;
@@ -31,9 +32,9 @@ export const projects: Project[] = [
     gridClass: "col-span-1 lg:col-span-2",
   },
   {
-    title: "Core Infrastructure Refactor",
+    title: "Beauty Course Website",
     category: "Company Profile",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDn8w4aFrXghZ_kjtccxsOd5kuRr8CkqcXuqEfSXWtnUzKdz0kTfA0qk_CVO3M2NB1TdSTuG5tnfq9KEAq0n8Gt4HHWW6h1OEffXpx-CbYDgak_Afs0-_Z73-5A5bWlSEwHuhOAH-FdKcBx33_-AyHgGAxIQvfg1ozeu6EmVBa64awiSZOUjGAdzzKmyn4HFdAtsSZSmqpFGL8KoSLZdbXw3-n2fccQIff6kdzW_3mOla3P--QgZEKMvNnXn8XjJn59GGWA01zx9Eg",
+    image: beautyCourseImg,
     gridClass: "col-span-1 lg:col-span-3",
   },
   {
