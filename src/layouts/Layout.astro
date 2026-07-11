@@ -1,11 +1,10 @@
 ---
-import "../styles/global.css"; 
-import "@fontsource-variable/manrope"; 
+import "../styles/global.css";
+import "@fontsource-variable/manrope";
 import { GeoSchema } from "../data/GeoSchema";
 
-
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -13,49 +12,90 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html class="dark" lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
-		<meta name="title" content="Rizal Project - Web Development Specialist" />
-		<meta name="description" content="Rizal Project offers professional Web Development and Landing Page services. Expert Freelance Web Developer in Indonesia for Company Profiles, E-commerce, and custom apps." />
-		<meta name="keywords" content="Rizal Project, Freelance Web Developer, Web Development Specialist, Web Development Service, LandingPage Service, Company Profile Websites, Landing Page, Ecommerce Websites, Custom Application, Freelance Web Developer Indonesia" />
-		
-		<!-- Open Graph / Facebook -->
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content={Astro.url} />
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content="Rizal Project offers professional Web Development and Landing Page services. Expert Freelance Web Developer in Indonesia for Company Profiles, E-commerce, and custom apps." />
-		<meta property="og:image" content={new URL('/rizalproject.jpg', Astro.site)} />
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="title" content="Rizal Project - Web Development Specialist" />
+    <meta
+      name="description"
+      content="Rizal Project offers professional Web Development and Landing Page services. Expert Freelance Web Developer in Indonesia for Company Profiles, E-commerce, and custom apps."
+    />
+    <meta
+      name="keywords"
+      content="Rizal Project, Freelance Web Developer, Web Development Specialist, Web Development Service, LandingPage Service, Company Profile Websites, Landing Page, Ecommerce Websites, Custom Application, Freelance Web Developer Indonesia"
+    />
 
-		<!-- Twitter -->
-		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content={Astro.url} />
-		<meta property="twitter:title" content={title} />
-		<meta property="twitter:description" content="Rizal Project offers professional Web Development and Landing Page services. Expert Freelance Web Developer in Indonesia for Company Profiles, E-commerce, and custom apps." />
-		<meta property="twitter:image" content={new URL('/rizalproject.jpg', Astro.site)} />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta
+      property="og:description"
+      content="Rizal Project offers professional Web Development and Landing Page services. Expert Freelance Web Developer in Indonesia for Company Profiles, E-commerce, and custom apps."
+    />
+    <meta
+      property="og:image"
+      content={new URL("/rizalproject.jpg", Astro.site)}
+    />
 
-		<title>{title}</title>
-		<script type="application/ld+json" set:html={JSON.stringify(GeoSchema)} />
-	</head>
-	<body
-		class="bg-background-light dark:bg-background-dark text-[#111712] dark:text-white font-display overflow-x-hidden antialiased selection:bg-primary selection:text-background-dark"
-	>
-		<div
-			class="relative flex h-auto min-h-screen w-full flex-col group/design-root"
-		>
-			<div
-				class="fixed top-[-20%] right-[-10%] w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] pointer-events-none z-0"
-			>
-			</div>
-			<div
-				class="fixed bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] pointer-events-none z-0"
-			>
-			</div>
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta
+      property="twitter:description"
+      content="Rizal Project offers professional Web Development and Landing Page services. Expert Freelance Web Developer in Indonesia for Company Profiles, E-commerce, and custom apps."
+    />
+    <meta
+      property="twitter:image"
+      content={new URL("/rizalproject.jpg", Astro.site)}
+    />
 
-			<slot />
-		</div>
-		<script>
-			import "../scripts/global.js";
-		</script>
-	</body>
+    <title>{title}</title>
+    <!-- Google Tag Manager -->
+    <script is:inline>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-KZ76TLNS");
+    </script>
+    <!-- End Google Tag Manager -->
+    <script type="application/ld+json" set:html={JSON.stringify(GeoSchema)} />
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-[#111712] dark:text-white font-display overflow-x-hidden antialiased selection:bg-primary selection:text-background-dark"
+  >
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KZ76TLNS"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+    <!-- End Google Tag Manager (noscript) -->
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col group/design-root"
+    >
+      <div
+        class="fixed top-[-20%] right-[-10%] w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] pointer-events-none z-0"
+      >
+      </div>
+      <div
+        class="fixed bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] pointer-events-none z-0"
+      >
+      </div>
+
+      <slot />
+    </div>
+    <script>
+      import "../scripts/global.js";
+    </script>
+  </body>
 </html>
